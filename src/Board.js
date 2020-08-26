@@ -113,10 +113,9 @@
         if (this.hasRowConflictAt(i) === true) {
           // return true, conflicts
           return true;
-        } else {
-          return false; // fixme
         }
       }
+      return false; // fixme
     },
 
     // COLUMNS - run from top to bottom

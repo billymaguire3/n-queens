@@ -78,12 +78,31 @@
     // --------------------------------------------------------------
     //
     // test if a specific row on this board contains a conflict
+    // I: rows index. Index of an array
+    // O: boolean
     hasRowConflictAt: function(rowIndex) {
+      var arr = this.get(rowIndex);
+      // storing an array in a variable
+      // create a conflict counter
+      // iterate over the array
+        //if the current element is a 1
+          // increment our conflict counter
+      // if the conflict counter is 2 or greater
+        // know for sure there is conflict, return true
+      // otherwise, return false, no conflict on that row
       return false; // fixme
     },
 
+    // [ 0, 1, 0, 0]
+
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function() {
+      var arr = this.rows();
+      // store an array in a variable
+      // iterate over the array
+        // if our hasRowConflictAt function called on each element in the array ever equals true
+          // return true, conflicts
+      // return false
       return false; // fixme
     },
 
@@ -94,11 +113,25 @@
     //
     // test if a specific column on this board contains a conflict
     hasColConflictAt: function(colIndex) {
+      //store our gathered arr in a variable
+      //create a counter variable
+      //iterate over that arr
+        //if the current elem is a 1
+          //incremenet our conflict counter
+      // if conflict counter is 2 or greater(there is a conflict)
+        //return true;
+      //else
+        //return false; (no conflict);
       return false; // fixme
     },
 
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function() {
+      //store our gathered arr in a var
+      //iterate over that arr
+        //if calling our hasColConflictAt on the current element is equal to true
+          //return true
+      //return false
       return false; // fixme
     },
 

@@ -155,12 +155,12 @@
           return true;
         }
       }
-      //iterate over that arr
-      //if calling our hasColConflictAt on the current element is equal to true
-      //return true
-      //return false
       return false; // fixme
     },
+    //iterate over that arr
+    //if calling our hasColConflictAt on the current element is equal to true
+    //return true
+    //return false
 
 
 

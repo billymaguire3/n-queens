@@ -99,7 +99,7 @@
         return true;
       } else {
       // otherwise, return false, no conflict on that row
-        return false; // fixme
+        return false;
       }
     },
 
@@ -110,12 +110,12 @@
       // iterate over the array
       for (var i = 0; i < gatheredArray.length; i++) {
         // if our hasRowConflictAt function called on each element in the array ever equals true
-        if (this.hasRowConflictAt(i) === true) {
+        if (this.hasRowConflictAt(i)) {
           // return true, conflicts
           return true;
         }
       }
-      return false; // fixme
+      return false;
     },
 
     // COLUMNS - run from top to bottom
@@ -125,6 +125,7 @@
     hasColConflictAt: function(colIndex) {
       //store our gathered arr in a variable
       var gatheredArr = this.rows();
+
       //create a counter variable
       var conflictCounter = 0;
       //iterate over that arr
@@ -151,7 +152,7 @@
       //store our gathered arr in a var
       var gatheredArr = this.rows();
       for (var i = 0; i < gatheredArr.length; i++) {
-        if (this.hasColConflictAt(i) === 1) {
+        if (this.hasColConflictAt(i) === true) {
           return true;
         }
       }
@@ -179,10 +180,16 @@
       var gatheredArr = this.rows();
       // create variable number and ititialize to input variable
       var column = major;
+      var test = 1;
+      console.log(`the current test: ${test}`);
+      console.log(gatheredArr);
+      test++;
       // iterate over our gathered array
       for (var i = 0; i < gatheredArr.length; i++) {
+
         if (gatheredArr[i][column] === 1) {
           conflictCounter++;
+          console.log('the conflict counter is' + conflictCounter);
         }
         column++;
       }
@@ -191,15 +198,14 @@
       } else {
         return false;
       }
-      // check if our element at our index at our number/column is a 1(rook), conflict
-      // increment our conflict counter by 1
-      // increment our number/column variable by one(move to next column)
-      // if ourconflict counter is 2 or greater
-      // return true(conflict)
-      // otherwishe
-      // return false
-      return false; // fixme
     },
+    // check if our element at our index at our number/column is a 1(rook), conflict
+    // increment our conflict counter by 1
+    // increment our number/column variable by one(move to next column)
+    // if ourconflict counter is 2 or greater
+    // return true(conflict)
+    // otherwishe
+    // return false
 
     // test if any major diagonals on this board contain conflicts
     // I: nothing
@@ -213,12 +219,12 @@
           return true;
         }
       }
-      // if calling our previous function on each index is ever true
-      // return true, conflict
-      // othersie,
-      // return false
-      return false; // fixme
+      return false;
     },
+    // if calling our previous function on each index is ever true
+    // return true, conflict
+    // othersie,
+    // return false
 
 
 
@@ -286,3 +292,15 @@
   };
 
 }());
+
+var evenOccurrence = function(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    var elem = arr[i];
+    //var smallerArr = arr.slice(i); Turns out this wont work because it doesnt keep context through each iteration.
+    var numOfElem = arr.filter(num => num === elem).length;
+    if (numOfElem % 2 === 0) { //even
+      return elem;
+    }
+  }
+  return null;
+};

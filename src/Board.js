@@ -180,16 +180,10 @@
       var gatheredArr = this.rows();
       // create variable number and ititialize to input variable
       var column = major;
-      var test = 1;
-      console.log(`the current test: ${test}`);
-      console.log(gatheredArr);
-      test++;
       // iterate over our gathered array
-      for (var i = 0; i < gatheredArr.length; i++) {
-
+      for (var i = 0; i < gatheredArr.length - major; i++) {
         if (gatheredArr[i][column] === 1) {
           conflictCounter++;
-          console.log('the conflict counter is' + conflictCounter);
         }
         column++;
       }
@@ -212,10 +206,10 @@
     // O: boolean
     hasAnyMajorDiagonalConflicts: function() {
       // initialize gathered array into a variable
-      var gatheredArr = this.rows();
+      var size = this.get(n);
       // iterate over gathered array
-      for (var i = 0; i < gatheredArr.length; i++) {
-        if (this.hasMajorDiagonalConflictAt(i) === true) {
+      for (var i = 1 - size; i < size; i++) {
+        if (this.hasMajorDiagonalConflictAt(i)) {
           return true;
         }
       }

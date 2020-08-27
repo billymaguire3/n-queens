@@ -261,11 +261,11 @@
     // O: bool
     hasAnyMinorDiagonalConflicts: function() {
       //create a var to store our gathered arr
-      var gatheredArr = this.rows();
+      var size = this.rows().length;
       //iterate over that arr
-      for (var i = 0; i < gatheredArr.length; i++) {
+      for (var i = size + (size - 1); i > 0; i--) {
         //if the result of calling the above funciton on each index is ever true
-        if (this.hasMinorDiagonalConflictAt(i) === true) {
+        if (this.hasMinorDiagonalConflictAt(i)) {
           //return true (conflicts)
           return true;
         }
